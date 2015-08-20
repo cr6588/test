@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cheny.test.dao.TestDao" >
+  <resultMap id="i18nResultMap" type="com.cheny.web.bean.I18n" >
+    <id column="no" property="no" />
+    <result column="code" property="code" />
+    <result column="language" property="language" />
+    <result column="text" property="text" />
+  </resultMap>
+  <sql id="I18n_Column_List" >
+    `no`, code, `language`, `text`
+  </sql>
+  <select id="getI18n" resultMap="i18nResultMap" parameterType="java.util.Map">
+    select
+    <include refid="I18n_Column_List" />
+    from i18n
+    where 1 = 1
+    <if test="language != null">
+    and language = #{language}
+    </if> 
+  </select>
+<!--   <select id="selectByExampleAndPage" resultMap="BaseResultMap" parameterType="com.pojo.I18nExample" > -->
+<!--     select -->
+<!--     <if test="distinct" > -->
+<!--       distinct -->
+<!--     </if> -->
+<!--     <include refid="Base_Column_List" /> -->
+<!--     from i18n -->
+<!--     <if test="_parameter != null" > -->
+<!--       <include refid="Example_Where_Clause" /> -->
+<!--     </if> -->
+<!--     <if test="orderByClause != null" > -->
+<!--       order by ${orderByClause} -->
+<!--     </if> -->
+<!--   </select> -->
+<!--   <delete id="deleteByExample" parameterType="com.pojo.I18nExample" > -->
+<!--     delete from i18n -->
+<!--     <if test="_parameter != null" > -->
+<!--       <include refid="Example_Where_Clause" /> -->
+<!--     </if> -->
+<!--   </delete> -->
+<!--   <select id="countByExample" parameterType="com.pojo.I18nExample" resultType="java.lang.Integer" > -->
+<!--     select count(*) from i18n -->
+<!--     <if test="_parameter != null" > -->
+<!--       <include refid="Example_Where_Clause" /> -->
+<!--     </if> -->
+<!--   </select> -->
+<!--   <update id="updateByExampleSelective" parameterType="map" > -->
+<!--     update i18n -->
+<!--     <set > -->
+<!--       <if test="record.no != null" > -->
+<!--         `no` = #{record.no,jdbcType=INTEGER}, -->
+<!--       </if> -->
+<!--       <if test="record.code != null" > -->
+<!--         code = #{record.code,jdbcType=VARCHAR}, -->
+<!--       </if> -->
+<!--       <if test="record.language != null" > -->
+<!--         `language` = #{record.language,jdbcType=VARCHAR}, -->
+<!--       </if> -->
+<!--       <if test="record.text != null" > -->
+<!--         `text` = #{record.text,jdbcType=VARCHAR}, -->
+<!--       </if> -->
+<!--     </set> -->
+<!--     <if test="_parameter != null" > -->
+<!--       <include refid="Update_By_Example_Where_Clause" /> -->
+<!--     </if> -->
+<!--   </update> -->
+<!--   <update id="updateByExample" parameterType="map" > -->
+<!--     update i18n -->
+<!--     set `no` = #{record.no,jdbcType=INTEGER}, -->
+<!--       code = #{record.code,jdbcType=VARCHAR}, -->
+<!--       `language` = #{record.language,jdbcType=VARCHAR}, -->
+<!--       `text` = #{record.text,jdbcType=VARCHAR} -->
+<!--     <if test="_parameter != null" > -->
+<!--       <include refid="Update_By_Example_Where_Clause" /> -->
+<!--     </if> -->
+<!--   </update> -->
+<!--   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" > -->
+<!--     select  -->
+<!--     <include refid="Base_Column_List" /> -->
+<!--     from i18n -->
+<!--     where `no` = #{no,jdbcType=INTEGER} -->
+<!--   </select> -->
+<!--   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" > -->
+<!--     delete from i18n -->
+<!--     where `no` = #{no,jdbcType=INTEGER} -->
+<!--   </delete> -->
+<!--   <insert id="insert" parameterType="com.pojo.I18n" useGeneratedKeys="true" keyProperty="no" > -->
+<!--     insert into i18n (code, `language`, `text` -->
+<!--       ) -->
+<!--     values (#{code,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR}, #{text,jdbcType=VARCHAR} -->
+<!--       ) -->
+<!--   </insert> -->
+<!--   <insert id="insertSelective" parameterType="com.pojo.I18n" useGeneratedKeys="true" keyProperty="no" > -->
+<!--     insert into i18n -->
+<!--     <trim prefix="(" suffix=")" suffixOverrides="," > -->
+<!--       code, -->
+<!--       `language`, -->
+<!--       `text`, -->
+<!--     </trim> -->
+<!--     <trim prefix="values (" suffix=")" suffixOverrides="," > -->
+<!--       #{code,jdbcType=VARCHAR}, -->
+<!--       #{language,jdbcType=VARCHAR}, -->
+<!--       #{text,jdbcType=VARCHAR}, -->
+<!--     </trim> -->
+<!--   </insert> -->
+<!--   <update id="updateByPrimaryKeySelective" parameterType="com.pojo.I18n" > -->
+<!--     update i18n -->
+<!--     <set > -->
+<!--       <if test="code != null" > -->
+<!--         code = #{code,jdbcType=VARCHAR}, -->
+<!--       </if> -->
+<!--       <if test="language != null" > -->
+<!--         `language` = #{language,jdbcType=VARCHAR}, -->
+<!--       </if> -->
+<!--       <if test="text != null" > -->
+<!--         `text` = #{text,jdbcType=VARCHAR}, -->
+<!--       </if> -->
+<!--     </set> -->
+<!--     where `no` = #{no,jdbcType=INTEGER} -->
+<!--   </update> -->
+<!--   <update id="updateByPrimaryKey" parameterType="com.pojo.I18n" > -->
+<!--     update i18n -->
+<!--     set code = #{code,jdbcType=VARCHAR}, -->
+<!--       `language` = #{language,jdbcType=VARCHAR}, -->
+<!--       `text` = #{text,jdbcType=VARCHAR} -->
+<!--     where `no` = #{no,jdbcType=INTEGER} -->
+<!--   </update> -->
+</mapper>
