@@ -33,17 +33,16 @@ asdf
     <spring:message code="hello"></spring:message>
     <script type="text/javascript">
     function changeLanguage(locale) {
-        var order = {};
-        var containers = [];
-        var container = {};
-        container.no = 1;
-        containers.push(container);
-        order.containers = containers;
-        console.log(order);
+        
+    }
+    function requestBody() {
+        var i18n = {};
+        i18n.code = 1;
+        i18n.language = 'zh';
         $.ajax({
             type: "post",
-            url: "/addDataTest",
-            data: JSON.stringify(order),
+            url: "/requestBody",
+            data: JSON.stringify(i18n),
             dataType: "json",
             contentType: "application/json",
             success:function(result) {

@@ -10,7 +10,7 @@ import com.cheny.test.dao.TestDao;
 import com.cheny.web.bean.I18n;
 
 @Service
-public class TestService {
+public class I18nSer {
 
     @Autowired
     private TestDao testDao;

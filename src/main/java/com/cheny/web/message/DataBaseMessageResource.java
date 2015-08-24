@@ -12,13 +12,13 @@ import org.springframework.beans.factory.BeanClassLoaderAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.AbstractMessageSource;
 
-import com.cheny.test.service.TestService;
+import com.cheny.test.service.I18nSer;
 import com.cheny.web.bean.I18n;
 import com.cheny.web.bean.Language;
 
 public class DataBaseMessageResource extends AbstractMessageSource implements BeanClassLoaderAware {
     @Autowired
-    private TestService testService;
+    private I18nSer testService;
 
     protected final static String I18N_SPLIT_CODE = "_";
 
