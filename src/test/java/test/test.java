@@ -147,7 +147,7 @@ public class test {
 
     @Before
     public void setUp() {
-        pool = new JedisPool("192.168.10.101", 6379);
+        pool = new JedisPool("localhost", 6380);
         jedis = pool.getResource();
         jedis.auth("123456");
     }
@@ -167,8 +167,10 @@ public class test {
         // -----添加数据----------
         jedis.set("name", "minxr");// 向key-->name中放入了value-->minxr
         System.out.println(jedis.get("name"));// 执行结果：minxr
+        
         // -----修改数据-----------
         // 1、在原来基础上修改
+        this.setUp();
         jedis.append("name", "jarorwar"); // 很直观，类似map 将jarorwar
                                           // append到已经有的value之后
         System.out.println(jedis.get("name"));// 执行结果:minxrjarorwar
