@@ -326,10 +326,10 @@ public class test {
         }
         
     }
-    @Test
-    public void enumTest() {
-        S s = new  S();
-        s.setStatus(LoadStatus.Onway);
-        System.out.println(s.getStatus() == LoadStatus.Onway);
-    }
+//    @Test
+//    public void enumTest() {
+//        S s = new  S();
+//        s.setStatus(LoadStatus.Onway);
+//        System.out.println(s.getStatus() == LoadStatus.Onway);
+//    }
 }
