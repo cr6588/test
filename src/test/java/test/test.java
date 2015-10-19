@@ -332,4 +332,8 @@ public class test {
         s.setStatus(LoadStatus.Onway);
         System.out.println(s.getStatus() == LoadStatus.Onway);
     }
+    @Test
+    public void testGit() {
+        System.out.println("only to add change to git");
+    }
 }
