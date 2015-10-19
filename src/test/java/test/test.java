@@ -20,6 +20,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 import com.cheny.web.bean.I18n;
+import com.cheny.web.bean.LoadStatus;
 
 public class test {
 
@@ -145,7 +146,7 @@ public class test {
     JedisPool pool;
     Jedis jedis;
 
-    @Before
+    
     public void setUp() {
         pool = new JedisPool("localhost", 6380);
         jedis = pool.getResource();
@@ -163,6 +164,7 @@ public class test {
      * @throws Exception 
      */
     @Test
+    @Ignore
     public void testBasicString() throws Exception {
         // -----添加数据----------
         jedis.set("name", "minxr");// 向key-->name中放入了value-->minxr
@@ -311,5 +313,23 @@ public class test {
         System.out.println(jedis.lrange("a", 0, -1));// [9, 3, 6, 1]
         System.out.println(jedis.sort("a")); // [1, 3, 6, 9] //输入排序后结果
         System.out.println(jedis.lrange("a", 0, -1));
+    }
+    public class S {
+        private LoadStatus status;
+
+        public LoadStatus getStatus() {
+            return status;
+        }
+
+        public void setStatus(LoadStatus status) {
+            this.status = status;
+        }
+        
+    }
+    @Test
+    public void enumTest() {
+        S s = new  S();
+        s.setStatus(LoadStatus.Onway);
+        System.out.println(s.getStatus() == LoadStatus.Onway);
     }
 }
