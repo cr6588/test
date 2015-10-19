@@ -146,7 +146,6 @@ public class test {
     JedisPool pool;
     Jedis jedis;
 
-    
     public void setUp() {
         pool = new JedisPool("localhost", 6380);
         jedis = pool.getResource();
@@ -161,7 +160,7 @@ public class test {
 
     /**
      * Redis存储初级的字符串 CRUD
-     * @throws Exception 
+     * @throws Exception
      */
     @Test
     @Ignore
@@ -169,7 +168,7 @@ public class test {
         // -----添加数据----------
         jedis.set("name", "minxr");// 向key-->name中放入了value-->minxr
         System.out.println(jedis.get("name"));// 执行结果：minxr
-        
+
         // -----修改数据-----------
         // 1、在原来基础上修改
         this.setUp();
@@ -190,15 +189,15 @@ public class test {
         I18n i18n = new I18n();
         i18n.setCode("11");
         Map<String, I18n> map = new HashMap<>();
-      //序列化
+        // 序列化
         ObjectOutputStream oos = null;
         ByteArrayOutputStream baos = null;
         baos = new ByteArrayOutputStream();
         oos = new ObjectOutputStream(baos);
         oos.writeObject(i18n);
         byte[] bytes = baos.toByteArray();
-//        map.put("i18n".getBytes(), i18n);
-//        jedis.set
+        // map.put("i18n".getBytes(), i18n);
+        // jedis.set
         jedis.set("i18n", "i18n");
         System.out.println(jedis.expire("i18n", 1));
         jedis.set("i18n".getBytes(), bytes);
@@ -206,11 +205,11 @@ public class test {
         Thread.sleep(3000);
         jedis.get("i18n".getBytes());
         System.out.println("i18n ser:" + "i18n".getBytes());
-      //反序列化
+        // 反序列化
         ByteArrayInputStream bais = null;
         bais = new ByteArrayInputStream(jedis.get("i18n".getBytes()));
         ObjectInputStream ois = new ObjectInputStream(bais);
-        I18n i18nGet = (I18n)ois.readObject();
+        I18n i18nGet = (I18n) ois.readObject();
         System.out.println(i18nGet.getCode());
         System.out.println(jedis.get("i18n"));
     }
@@ -314,6 +313,7 @@ public class test {
         System.out.println(jedis.sort("a")); // [1, 3, 6, 9] //输入排序后结果
         System.out.println(jedis.lrange("a", 0, -1));
     }
+
     public class S {
         private LoadStatus status;
 
@@ -324,12 +324,17 @@ public class test {
         public void setStatus(LoadStatus status) {
             this.status = status;
         }
-        
+
     }
+
     @Test
     public void enumTest() {
-        S s = new  S();
+        S s = new S();
         s.setStatus(LoadStatus.Onway);
         System.out.println(s.getStatus() == LoadStatus.Onway);
+    }
+
+    public void te() {
+
     }
 }
