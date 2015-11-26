@@ -20,6 +20,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 import com.cheny.web.bean.I18n;
+import com.cheny.web.bean.LoadCache;
 import com.cheny.web.bean.LoadStatus;
 
 public class test {
@@ -325,5 +326,25 @@ public class test {
             this.status = status;
         }
 
+    }
+
+    @Ignore
+    @Test
+    public void enumTest() {
+        S s = new S();
+        s.setStatus(LoadStatus.Onway);
+        System.out.println(s.getStatus() == LoadStatus.Onway);
+        
+    }
+
+    @Test
+    public void varTest() throws Exception {
+        LoadCache loadCache = new LoadCache();
+        loadCache.remindTime = System.currentTimeMillis();
+        loadCache.gpsTime = loadCache.remindTime;
+        System.out.println(loadCache.gpsTime);
+        Thread.sleep(2000);
+        loadCache.remindTime = System.currentTimeMillis();
+        System.out.println(loadCache.gpsTime);
     }
 }
