@@ -10,7 +10,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
+import org.apache.log4j.Logger;
+
 public class FileReadWrite {
+
+    public static Logger logger = Logger.getLogger(FileReadWrite.class);
 
     public static void main(String[] args) throws IOException {
         try {
