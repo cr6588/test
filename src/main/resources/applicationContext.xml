@@ -122,4 +122,6 @@
 
     <!-- 将提交上来的locale字段信息生成真正的Locale对象，然后将对象保存在Session中 -->
     <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
+
+    <task:annotation-driven/>
 </beans>

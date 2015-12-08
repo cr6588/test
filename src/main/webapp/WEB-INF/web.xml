@@ -24,12 +24,18 @@
             classpath:applicationContext.xml
         </param-value>
     </context-param>
-    <listener>
-        <listener-class>
-            <!--让服务器启动时就初始化该类，可以得到request -->
-            org.springframework.web.context.request.RequestContextListener
-        </listener-class>
-    </listener>
+<!--     <context-param> -->
+<!--         <param-name>taskConfigLocation</param-name> -->
+<!--         <param-value> -->
+<!--             classpath:spring-task.xml -->
+<!--         </param-value> -->
+<!--     </context-param> -->
+<!--     <listener> -->
+<!--         <listener-class> -->
+<!--             让服务器启动时就初始化该类，可以得到request -->
+<!--             org.springframework.web.context.request.RequestContextListener -->
+<!--         </listener-class> -->
+<!--     </listener> -->
     <!-- 加载spring容器配置 -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -54,7 +60,7 @@
         <!-- 不指定 <init-param> 会自动找web.xml相同路径下 web-servlet.xml文件 -->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:dispatcher.xml</param-value>
+            <param-value>classpath:dispatcher.xml,classpath:spring-task.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
