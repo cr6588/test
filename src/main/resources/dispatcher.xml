@@ -24,10 +24,10 @@
         <property name="order" value="1"></property>
         <property name="contentType"> <value>text/html;charset=UTF-8</value></property>
     </bean>
-<!--     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> -->
-<!--         <property name="prefix" value="/WEB-INF/pages/" /> -->
-<!--         <property name="suffix" value=".jsp" /> -->
-<!--     </bean> -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
     <mvc:interceptors>
         <!-- 国际化拦截器 -->
         <bean class="com.cheny.web.filter.LanguageIntercepter" />

@@ -1,6 +1,8 @@
 package com.cheny.test.action;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.ServletOutputStream;
@@ -12,9 +14,7 @@ import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.Row;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,8 +22,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.cheny.web.bean.Order;
 
 @Controller
+@RequestMapping("/te")
 public class TestAction {
-   
+
 //    @Autowired
 //    private UserService userService;
  
@@ -91,5 +92,14 @@ public class TestAction {
     @ResponseBody
     public void addDataTest(@RequestBody Order order) {
         System.out.println("1");
+    }
+
+    @RequestMapping("/getPath")
+    @ResponseBody
+    public Map<String, Object> getPath(HttpServletRequest request) {
+        Map<String,Object> map = new HashMap<>();
+        String webapp_path = request.getServletContext().getRealPath("/");
+        map.put("webapp_path", webapp_path);
+        return map;
     }
 }

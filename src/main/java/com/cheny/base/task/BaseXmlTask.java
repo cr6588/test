@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 
 public class BaseXmlTask {
 
-    public static boolean main = true;
+    public static boolean main = false;
 
     public void task() {
         if (!main) {

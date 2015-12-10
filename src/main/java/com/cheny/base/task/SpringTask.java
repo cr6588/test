@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @PropertySource("classpath:task.properties")
-@Component
+//@Component
 public class SpringTask implements Runnable{
 
 //    @Autowired
