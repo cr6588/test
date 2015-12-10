@@ -88,6 +88,7 @@ public class ImplementsRunnable implements Runnable {
         irB.setNext(irC);
         irC.setNext(irA);
 
+<<<<<<< HEAD
         // Thread thread1 = new Thread(irA);
         // Thread thread2 = new Thread(irB);
         // Thread thread3 = new Thread(irC);
@@ -98,5 +99,14 @@ public class ImplementsRunnable implements Runnable {
         ImplementsRunnable test = new ImplementsRunnable("D", false);
         test.change("AAA", test.ch);
         System.out.println(test.str + " " + test.ch[0] + test.ch[1] + test.ch[2]);
+=======
+        Thread thread1 = new Thread(irA);
+        Thread thread2 = new Thread(irB);
+        Thread thread3 = new Thread(irC);
+        thread1.start();
+        thread2.start();
+        thread3.start();
+        thread1.suspend();
+>>>>>>> branch 'master' of https://github.com/cr6588/test.git
     }
 }
