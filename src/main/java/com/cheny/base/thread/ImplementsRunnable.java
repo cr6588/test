@@ -8,6 +8,7 @@ public class ImplementsRunnable implements Runnable {
     String str;
     public boolean flag;
     ImplementsRunnable next;
+    char[] ch = { 'a', 'b', 'c' };
     // private static Object lock=new Object();
     private static byte[] lock = new byte[0];
     private static Lock reenTrantLock = new ReentrantLock();
@@ -22,8 +23,13 @@ public class ImplementsRunnable implements Runnable {
 
     @Override
     public void run() {
-//        synchronizedPrint();
+        // synchronizedPrint();
         reentrantLockPrint();
+    }
+
+    public void change(String str, char[] ch) {
+        this.str = str;
+        ch[0] = 'g';
     }
 
     public void synchronizedPrint() {
@@ -36,7 +42,7 @@ public class ImplementsRunnable implements Runnable {
                     lock.notifyAll();
                 } else {
                     try {
-                         System.out.println(this.str + " wait" + " ");
+                        System.out.println(this.str + " wait" + " ");
                         lock.wait();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -82,11 +88,15 @@ public class ImplementsRunnable implements Runnable {
         irB.setNext(irC);
         irC.setNext(irA);
 
-        Thread thread1 = new Thread(irA);
-        Thread thread2 = new Thread(irB);
-        Thread thread3 = new Thread(irC);
-        thread1.start();
-        thread2.start();
-        thread3.start();
+        // Thread thread1 = new Thread(irA);
+        // Thread thread2 = new Thread(irB);
+        // Thread thread3 = new Thread(irC);
+        // thread1.start();
+        // thread2.start();
+        // thread3.start();
+
+        ImplementsRunnable test = new ImplementsRunnable("D", false);
+        test.change("AAA", test.ch);
+        System.out.println(test.str + " " + test.ch[0] + test.ch[1] + test.ch[2]);
     }
 }
