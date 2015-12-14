@@ -11,11 +11,11 @@
             <tbody>
                 <tr>
                     <td>用户:</td>
-                    <td><input type="text" name="'j_username'"></td>
+                    <td><input type="text" name="j_username"></td>
                 </tr>
                 <tr>
                     <td>密码:</td>
-                    <td><input type="password" name="'j_password'"></td>
+                    <td><input type="password" name="j_password"></td>
                 </tr>
                 <tr>
                     <td><input name="reset" type="reset"></td>
