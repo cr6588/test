@@ -17,6 +17,20 @@
         <filter-name>Set Character Encoding</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+<!--      加载Spring XML配置文件 -->
+<!--     <context-param> -->
+<!--         <param-name>contextConfigLocation</param-name> -->
+<!--         <param-value> classpath:spring-security.xml</param-value> -->
+<!--     </context-param>  -->
+<!--       Spring Secutiry3.1的过滤器链配置 -->
+<!--     <filter> -->
+<!--         <filter-name>springSecurityFilterChain</filter-name> -->
+<!--         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class> -->
+<!--     </filter> -->
+<!--     <filter-mapping> -->
+<!--         <filter-name>springSecurityFilterChain</filter-name> -->
+<!--         <url-pattern>/sec/*</url-pattern> -->
+<!--     </filter-mapping>  -->
     <!-- 设置Spring容器加载配置文件路径 (主要配置都在这里面) -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -24,12 +38,6 @@
             classpath:applicationContext.xml
         </param-value>
     </context-param>
-<!--     <context-param> -->
-<!--         <param-name>taskConfigLocation</param-name> -->
-<!--         <param-value> -->
-<!--             classpath:spring-task.xml -->
-<!--         </param-value> -->
-<!--     </context-param> -->
 <!--     <listener> -->
 <!--         <listener-class> -->
 <!--             让服务器启动时就初始化该类，可以得到request -->
