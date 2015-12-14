@@ -17,6 +17,6 @@ public class SecurityAction {
 
     @RequestMapping(value = "/{pageName}", method = RequestMethod.GET)
     public ModelAndView viewAdminManagePages(HttpServletRequest request, @PathVariable("pageName") String pageName) throws Exception {
-        return new ModelAndView("/sec" + pageName, RequestSessionUtil.getRequestParamData(request));
+        return new ModelAndView("/sec/" + pageName, RequestSessionUtil.getRequestParamData(request));
     }
 }

@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<sec:authentication property="name" />
 欢迎来到管理员页面
     <br>
 </body>

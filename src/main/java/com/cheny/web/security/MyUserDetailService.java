@@ -21,7 +21,6 @@ public class MyUserDetailService implements UserDetailsService {
             auths.add(auth1);
             auths.add(auth2);
         }
-
         User user = new User(username, "lcy", true, true, true, true, auths);
         return user;
     }
