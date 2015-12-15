@@ -6,6 +6,7 @@ import org.springframework.util.PathMatcher;
 public class AntUrlPathMatcher implements UrlMatcher {
     private boolean requiresLowerCaseUrl;
     private PathMatcher pathMatcher;
+    
 
     public AntUrlPathMatcher() {
         this(true);
