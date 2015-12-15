@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-欢迎来到管理员页面
-    <br>
-       <a href="/sec/other">进入其它页面</a> 
+404 page !
 </body>
 </html>

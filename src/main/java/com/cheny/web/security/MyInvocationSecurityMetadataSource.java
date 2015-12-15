@@ -26,11 +26,12 @@ public class MyInvocationSecurityMetadataSource implements FilterInvocationSecur
         Collection<ConfigAttribute> atts = new ArrayList<ConfigAttribute>();
         ConfigAttribute ca = new SecurityConfig("ROLE_USER");
         atts.add(ca);
-        resourceMap.put("/index.jsp", atts);
+        resourceMap.put("/index", atts);
         Collection<ConfigAttribute> attsno = new ArrayList<ConfigAttribute>();
         ConfigAttribute cano = new SecurityConfig("ROLE_NO");
         attsno.add(cano);
-        resourceMap.put("/http://blog.csdn.net/u012367513/article/details/other.jsp", attsno);
+        attsno.add(ca);
+        resourceMap.put("/sec/index", attsno);
     }
 
     // 参数是要访问的url，返回这个url对于的所有权限（或角色）
