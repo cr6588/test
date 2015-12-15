@@ -2,6 +2,7 @@ package com.cheny.web.security;
 
 import java.io.IOException;
 
+import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -14,7 +15,7 @@ import org.springframework.security.access.intercept.InterceptorStatusToken;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 
-public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor {
+public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor implements Filter {
 
     // 配置文件注入
     private FilterInvocationSecurityMetadataSource securityMetadataSource;

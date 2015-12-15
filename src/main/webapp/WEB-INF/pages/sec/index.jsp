@@ -1,22 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
-<!DOCTYPE html>
+<%@page language="java" import="java.util.*" pageEncoding="UTF-8"%> 
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%> 
+<!DOCTYPEHTMLPUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>哈哈</title>
+<title>My JSP 'index.jsp' starting page</title>
 </head>
 <body>
- <sec:authentication property="name"> !
-     
-    <br> 
-    进入admin页面 
-    进入其它页面 
- 
-  
- 
- 
-  
-</sec:authentication>
+    <h3>这是首页</h3>
+    欢迎
+    <sec:authentication property="name" />
+    <br> 
+    <a href="/sec/admin">进入admin页面</a> 
+    <a href="/sec/other">进入其它页面</a> 
 </body>
 </html>
+ 

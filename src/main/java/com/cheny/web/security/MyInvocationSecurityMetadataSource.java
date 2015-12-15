@@ -10,8 +10,6 @@ import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.access.SecurityConfig;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
-import org.springframework.util.AntPathMatcher;
-import org.springframework.util.PathMatcher;
 
 public class MyInvocationSecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
     private UrlMatcher urlMatcher = new AntUrlPathMatcher();

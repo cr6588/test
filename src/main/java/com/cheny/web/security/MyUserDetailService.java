@@ -11,7 +11,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 public class MyUserDetailService implements UserDetailsService {
 
-    @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Collection<SimpleGrantedAuthority> auths = new ArrayList<SimpleGrantedAuthority>();
 
@@ -22,7 +21,6 @@ public class MyUserDetailService implements UserDetailsService {
             auths.add(auth1);
             auths.add(auth2);
         }
-
         User user = new User(username, "lcy", true, true, true, true, auths);
         return user;
     }
