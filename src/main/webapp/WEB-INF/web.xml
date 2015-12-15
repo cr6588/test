@@ -17,15 +17,6 @@
         <filter-name>Set Character Encoding</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
-<<<<<<< HEAD
-=======
-        <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>
-            classpath:spring-security.xml
-        </param-value>
-    </context-param>
->>>>>>> branch 'try_to_add_security' of https://github.com/cr6588/test.git
 <!--       Spring Secutiry3.1的过滤器链配置 -->
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
@@ -40,12 +31,8 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             classpath:applicationContext.xml,
-<<<<<<< HEAD
 <!--             classpath:spring-security.xml -->
             classpath:spring-security-update.xml
-=======
-            classpath:spring-security.xml
->>>>>>> branch 'try_to_add_security' of https://github.com/cr6588/test.git
         </param-value>
     </context-param>
 <!--     <listener> -->

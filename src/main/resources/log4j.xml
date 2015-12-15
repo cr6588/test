@@ -18,7 +18,7 @@
     <!-- file appender for debug level -->
     <appender name="FileDebug" class="org.apache.log4j.RollingFileAppender">
         <param name="Encoding" value="UTF-8"/>
-        <param name="File" value="${catalina.base}/logs/logistics/debug.log" />
+        <param name="File" value="${catalina.base}/logs/test/debug.log" />
         <param name="MaxFileSize" value="10240KB" />
         <param name="MaxBackupIndex" value="50" />
         <layout class="org.apache.log4j.PatternLayout">
@@ -34,7 +34,7 @@
     <!-- file appender for info level -->
     <appender name="FileInfo" class="org.apache.log4j.RollingFileAppender">
         <param name="Encoding" value="UTF-8"/>
-        <param name="File" value="${catalina.base}/logs/logistics/info.log" />
+        <param name="File" value="${catalina.base}/logs/test/info.log" />
         <param name="MaxFileSize" value="10240KB" />
         <param name="MaxBackupIndex" value="50" />
         <layout class="org.apache.log4j.PatternLayout">
@@ -50,7 +50,7 @@
     <!-- file appender for info warn -->
     <appender name="FileWarn" class="org.apache.log4j.RollingFileAppender">
         <param name="Encoding" value="UTF-8"/>
-        <param name="File" value="${catalina.base}/logs/logistics/warn.log" />
+        <param name="File" value="${catalina.base}/logs/test/warn.log" />
         <param name="MaxFileSize" value="10240KB" />
         <param name="MaxBackupIndex" value="50" />
         <layout class="org.apache.log4j.PatternLayout">
@@ -66,7 +66,7 @@
     <!-- file appender for error level -->
     <appender name="FileError" class="org.apache.log4j.RollingFileAppender">
         <param name="Encoding" value="UTF-8"/>
-        <param name="File" value="${catalina.base}/logs/logistics/error.log" />
+        <param name="File" value="${catalina.base}/logs/test/error.log" />
         <param name="MaxFileSize" value="10240KB" />
         <param name="MaxBackupIndex" value="50" />
         <layout class="org.apache.log4j.PatternLayout">
@@ -79,7 +79,7 @@
         <filter class="org.apache.log4j.varia.DenyAllFilter" />
     </appender>
 
-    <logger name="com.siping">
+    <logger name="com.cheny">
         <level value="debug" />
         <appender-ref ref="FileError" />
     </logger>

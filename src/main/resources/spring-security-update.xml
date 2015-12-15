@@ -7,7 +7,7 @@
 
   <!--登录页面不过滤 -->
     <http pattern="/sec/login" security="none" />
-    <http access-denied-page="/sec/accessDenied" entry-point-ref="loginEntryPoint">
+    <http access-denied-page="/sec/accessDenied" entry-point-ref="loginEntryPoint" use-expressions="true">
 <!--         <form-login login-page="/sec/login" /> -->
         <!-- 替换默认的LogoutFilter -->
 <!--         <custom-filter ref="customLogoutFilter" position="LOGOUT_FILTER" /> -->
@@ -16,7 +16,7 @@
         <!--访问/admin.jsp资源的用户必须具有ROLE_ADMIN的权限 -->
         <!-- <intercept-url pattern="/admin.jsp" access="ROLE_ADMIN" /> -->
 <!--         访问/**资源的用户必须具有ROLE_USER的权限 -->
-<!--         <intercept-url pattern="/sec/*" access="ROLE_USER" /> -->
+        <intercept-url pattern="/sec/*" access="ROLE_ADMIN" />
         <session-management>
             <concurrency-control max-sessions="1"
                 error-if-maximum-exceeded="false" />
