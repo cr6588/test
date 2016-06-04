@@ -3,6 +3,13 @@ package com.cheny.web.bean;
 
 
 public class Load  {
+    private Load next;
+    public Load getNext() {
+        return next;
+    }
+    public void setNext(Load next) {
+        this.next = next;
+    }
     private String clientId;
     private String securityCode; //安全码
     private Float timeSpan; //时间间隔（分钟）

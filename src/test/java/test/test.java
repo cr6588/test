@@ -36,7 +36,7 @@ public class test {
 
     private void MaoPao(int[] arrays) {
         for (int i = arrays.length - 1; i > 0; i++) {
-            for (int j = 0; j < i - 1; j++) {
+            for (int j = 0; j < i; j++) {
                 if (arrays[j] < arrays[j + 1]) {
                     int t = arrays[j + 1];
                     arrays[j + 1] = arrays[j];

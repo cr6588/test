@@ -8,6 +8,16 @@ import java.util.Date;
  * @author Mx
  */
 public class WeChatUserInfo implements Serializable {
+    private Load load;
+    
+    public Load getLoad() {
+        return load;
+    }
+
+    public void setLoad(Load load) {
+        this.load = load;
+    }
+
     public WeChatUserInfo() {
     }
 
