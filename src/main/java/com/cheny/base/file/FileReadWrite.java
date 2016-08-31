@@ -32,7 +32,7 @@ public class FileReadWrite {
             byte[]b = new byte[100];
             FileInputStream fis = new FileInputStream("A.txt");
             fis.read(b);
-            DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream("A.txt")));
+            DataInputStream dis = new DataInputStream(new BufferedInputStream(fis));
             int readLengt;
             try {
                 while ((readLengt = dis.read()) != -1) {
