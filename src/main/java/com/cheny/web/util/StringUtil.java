@@ -12,7 +12,7 @@ public class StringUtil {
             return true;
         }
         return false;
-    }8
+    }
 
     public void print() {
         System.out.println("print");
