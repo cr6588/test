@@ -1,6 +1,15 @@
 package test;
 
+import java.io.Closeable;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 
@@ -64,7 +73,7 @@ public class UrlUtilTest {
         }
     }
 
-    @Test
+//    @Test
     public void encodeTest() {
         String str = "<div class=\"tourSection_bohui\"><div class=\"tourContent_new\"><div class=\"day_title_new\"><h3><em contenteditable=\"true\">第1天</em><div contenteditable=\"true\">请在这里输入行程标题</div></h3></div></div></div>";
         String str1 = "%3Cdiv%20class%3D%22tourSection_bohui%22%3E%3Cdiv%20class%3D%22tourContent_new%22%3E%3Cdiv%20class%3D%22day_title_new%22%3E%3Ch3%3E%3Cem%20contenteditable%3D%22true%22%3E%u7B2C1%u5929%3C/em%3E%3Cdiv%20contenteditable%3D%22true%22%3E%u8BF7%u5728%u8FD9%u91CC%u8F93%u5165%u884C%u7A0B%u6807%u9898%3C/div%3E%3C/h3%3E%3C/div%3E%3C/div%3E%3C/div%3E";
@@ -89,4 +98,37 @@ public class UrlUtilTest {
         }
     }
 
+    @Test
+    public void urlToFileTest() {
+        OutputStream out = null;
+        InputStream is = null;
+        try {
+            URL url = new URL("http://gys.lvbh.cn/portal/base/images/gys_logo.png");
+            URLConnection con = url.openConnection();
+            is = con.getInputStream();
+            byte[] bs = new byte[1024];
+            int len;
+            out = new FileOutputStream(new File(this.getClass().getResource("/").getPath() + "imgTemp"));
+            while((len = is.read(bs)) != -1) {
+                out.write(bs, 0, len);
+            }
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            closeStream(is);
+            closeStream(out);
+        }
+    }
+
+    public void closeStream(Closeable stream) {
+        if(stream != null) {
+            try {
+                stream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
