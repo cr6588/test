@@ -103,7 +103,7 @@ public class UrlUtilTest {
         OutputStream out = null;
         InputStream is = null;
         try {
-            URL url = new URL("http://gys.lvbh.cn/portal/base/images/gys_logo.png");
+            URL url = new URL("ftp://127.0.0.1/pic1.jpg"); //http与ftp都可以
             URLConnection con = url.openConnection();
             is = con.getInputStream();
             byte[] bs = new byte[1024];
