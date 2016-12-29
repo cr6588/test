@@ -1,12 +1,9 @@
 package test;
 
-import static org.junit.Assert.*;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.cheny.web.bean.I18n;
-import com.cheny.web.bean.Load;
 
 public class OtherTest {
 
@@ -21,4 +18,10 @@ public class OtherTest {
         System.out.println(i.getText());
     }
 
+    @Test
+    public void stringTest() {
+        String s = "ss";
+        s+= "asdfsda" + "ssasdfasdfasdf";
+        System.out.println(s);
+    }
 }
