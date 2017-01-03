@@ -24,4 +24,19 @@ public class OtherTest {
         s+= "asdfsda" + "ssasdfasdfasdf";
         System.out.println(s);
     }
+
+    public String exception () {
+        try {
+            throw new Exception("ss");
+        } catch (Exception e) {
+            System.out.println("sssssssss");
+        }
+        return "s";
+    }
+
+    @Test
+    public void exceptionTest() {
+        System.out.println(exception());
+    }
+
 }
