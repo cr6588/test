@@ -1,7 +1,5 @@
 package com.cheny.web.filter;
 
-import java.util.Locale;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.log4j.Logger;
