@@ -346,4 +346,21 @@ public class test {
         loadCache.remindTime = System.currentTimeMillis();
         System.out.println(loadCache.gpsTime);
     }
+
+    public static synchronized void deal(StringBuffer sb,Integer len, String appendStr) {
+        if(len != 0) {
+            sb.delete(0, len);
+        } else {
+            sb.append(appendStr);
+        }
+    }
+
+    @Test
+    public void stringBufferTest() {
+        StringBuffer sb = new StringBuffer();
+        String str = sb.toString();
+        deal(sb, 0, "aaa");
+        System.out.println(sb.toString());
+        System.out.println(str);
+    }
 }

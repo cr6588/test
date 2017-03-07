@@ -1,7 +1,5 @@
 package test.thread;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 import com.cheny.base.thread.StaticMethodLoack;

@@ -23,16 +23,19 @@ public class JdbcTest {
     public static final String allChar = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String letterChar = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String numberChar = "0123456789";
+
     @Test
     public void test() {
-        JDBC jdbc = new JDBC("jdbc:mysql://localhost:3306/test?allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=UTF-8", "dev", "dev");
+        JDBC jdbc = new JDBC("jdbc:mysql://localhost:3307/cy?allowMultiQueries=true&amp;useUnicode=true&amp;characterEncoding=UTF-8", "dev", "dev");
         String sql = "INSERT into `user`(username,password,realname,tel,address,company,sex,age,qq,email) values (?,?,?,?,?,?,?,?,?,?);";
         jdbc.setSql(sql);
         try {
-            System.out.println(new Date().toString());
+            Date start = new Date();
+            int executeBatchNum = 10 * 2 * 5 * 2, batchNum = 5000;
+            System.out.println(start.toString());
             PreparedStatement pst = jdbc.getPstmt();
-            for(int i = 0; i < 10 * 20 * 3; i++) {
-                for(int j = 0; j < 5000; j++) {
+            for(int i = 0; i < executeBatchNum ; i++) {
+                for(int j = 0; j < batchNum; j++) {
                     pst.setString(1, generateMixString(8));
                     pst.setString(2, generateMixString(8));
                     pst.setString(3, nameArray[RandomUtil.random.nextInt(nameArray.length)] + RandomUtil.getMaxLenthChineseStr(3));
@@ -49,7 +52,9 @@ public class JdbcTest {
                 jdbc.getCon().commit();
                 pst.clearBatch();
             }
-            System.out.println(new Date().toString());
+            Date end = new Date();
+            System.out.println(end.toString());
+            System.out.println("insert " +  executeBatchNum * batchNum + " time " + (end.getTime() - start.getTime()));
             jdbc.close();
         } catch (Exception e) {
             e.printStackTrace();
