@@ -19,7 +19,7 @@ public class JavaMethodAreaOOM {
             enhancer.setCallback(new MethodInterceptor() {
                 @Override
                 public Object intercept(Object o, Method method, Object[] objects, MethodProxy methodProxy) throws Throwable {
-                    return methodProxy.invoke(o, args);
+                    return methodProxy.invoke(o, null);
                 }
             });
             enhancer.create();
